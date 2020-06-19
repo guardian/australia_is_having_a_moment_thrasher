@@ -1,0 +1,393 @@
+@import "_mq";
+@import "_fonts";
+@import "_palette";
+@import "_app-fonts";
+@import "_mixins";
+
+// Uncomment for embeds
+//@import "embed";
+// Uncomment for full screen (including immersive article main media)
+//@import "fullscreen";
+
+// Default breakpoints from Frontend
+// Use mc() in place of mq() so your thrashers don't get broken
+$mq-breakpoints: (
+    mobile:          320px,
+    mobileMedium:    375px,
+    mobileLandscape: 480px,
+    phablet:         660px,
+    tablet:          740px,
+    desktop:         980px,
+    leftCol:         1140px,
+    wide:            1300px
+);
+
+$primary: #FF7F0F;
+
+// update 'australian_moment' with yours
+$containerName:'australian_moment';
+// colours pulled from shared/css/_palette.sass
+$backgroundColor:$primary;
+$textColor: $neutral-7;
+$buttonColor:$neutral-7;
+$buttonHoverColor:$neutral-46;
+
+
+
+// this targets the container your thrasher is put inside on Fronts
+section##{$containerName} {
+    width:100%;
+    position: relative;
+    padding: 0 !important;
+    overflow: hidden;
+    background-color:#fff;
+    .fc-container__inner,
+    .fc-slice,
+    .facia-snap {
+        overflow: hidden;
+    }
+    .facia-snap {
+        padding: 0;
+    }
+}
+
+.#{$containerName} {
+    width:100%;
+    
+    background-color:$backgroundColor;
+
+    @include mq($until: mobile) {
+        display: inline-block;
+    }   
+
+    @include mq($from: mobile, $until: mobileLandscape) {
+        display: inline-block;
+    }
+
+    @include mq($from: mobileLandscape, $until: tablet) {
+        display: inline-block;
+    }
+
+    @include mq($from: tablet, $until: desktop) {
+        height:320px;
+    }
+
+    @include mq($from: desktop, $until: wide) {
+        height:320px;
+    }
+
+    @include mq($from: wide) {
+        height:320px;
+    }
+
+
+    &__title {
+        
+        height: 0px;
+        background-repeat: no-repeat;
+        z-index: 99;
+
+        @include mq($until: tablet) {
+            width: calc(100% - 40px);
+            padding-bottom: 18%;
+        }   
+
+        @include mq($from: tablet) {
+            width: 650px;
+            padding-bottom: 10%;
+            position: absolute;
+        }
+
+    }
+    &__headline {
+        color:$textColor;
+        font-family:"GuardianTitlepiece","Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
+        font-size: 34px;
+        @include mc ($from: mobileLandscape) {
+            color:$textColor;
+        }
+    }
+    &__component-button_left {
+        // mixin takes 3 variables:
+        // background-color, text-color, hover-background-color
+        @include component-button($bgColor: white, $color: #000, $hoverBgColor: #F9B000);
+        float: left;
+        margin-right: 10px;
+
+        span {
+            padding: 10px 2px 10px 20px;
+        }
+
+        @include mq($until: mobileLandscape) {
+            width: 100%;
+        }
+
+    }
+    &__component-button_right {
+        // mixin takes 3 variables:
+        // background-color, text-color, hover-background-color
+        @include component-button($bgColor: none, $color: #fff, $hoverBgColor: #F9B000);
+        float: left;
+        border: 1px solid white;
+
+        span {
+            padding: 10px 20px 0px 0px;
+        }
+
+        @include mq($until: mobileLandscape) {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+
+    }
+    &__roundel {
+        // mixin makes roundel sit top right of thrasher and move with grid
+        @include roundel-top-right;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+    &__actions {
+
+        z-index: 99;
+
+        @include mq($until: tablet) {
+            width: calc(100% - 40px);;
+            padding-top: 10px;
+            margin: auto;
+            display: block;
+        }   
+
+        @include mq($from: tablet) {
+            position: absolute;
+            left: 20px;
+            bottom: 20px;
+        }
+
+    }
+    &__info {
+        width: 100%;
+        z-index: 99;
+
+        @include mq($until: tablet) {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            max-width: calc(100% - 40px);
+            margin: auto;
+        }   
+
+        @include mq($from: tablet) {
+            max-width: 440px;
+            position: absolute;
+            left: 20px;
+            bottom: 80px;
+        }
+
+
+
+        p {
+            font-size: 15px;
+            line-height: 18px;
+            font-family: $f-sans-serif-text;
+        }
+
+        h4 {
+            font-size: 17px;
+            line-height: 21px;
+            font-family:"GuardianTitlepiece","Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
+        }
+    }
+    &__wrapper_contribute, &__wrapper_contribute {
+
+    }
+    &__planets {
+
+        background-position: center middle;
+        background-size: 100%;
+        overflow: hidden;
+
+        @include mq($until: mobile) {
+            width: 100%;
+            height: 0px;
+            padding-bottom: 40%;
+        }   
+
+        @include mq($from: mobile, $until: mobileLandscape) {
+            width: 100%;
+            height: 0px;
+            padding-bottom: 40%;
+        }
+
+        @include mq($from: mobileLandscape, $until: tablet) {
+            width: 100%;
+            height: 0px;
+            padding-bottom: 40%;
+        }
+
+        @include mq($from: tablet, $until: desktop) {
+            position: absolute;
+            top: 0px;
+            right: -250px;
+            bottom: 0px;
+            width: 800px;
+            height: 100%;
+        }
+
+        @include mq($from: desktop, $until: wide) {
+            position: absolute;
+            top: 0px;
+            right: -100px;
+            bottom: 0px;
+            width: 800px;
+            height: 100%;
+        }
+
+        @include mq($from: wide) {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            width: 800px;
+            height: 100%;
+        }
+
+
+    }
+    &__wrapper {
+        display: inline-block;
+    }
+
+.interactive-share {
+    height: 45px;
+    width: 45px;
+    border-radius: 34px;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 45px;
+    border: 0;
+}
+
+.share_label {
+    float: left;
+    line-height: 45px;
+    font-family: $f-sans-serif-text;
+
+    @include mq($until: desktop) {
+        display: none
+    }
+
+}
+
+.social_isolation {
+    
+    cursor: pointer;
+    
+
+    @include mq($until: tablet) {
+        width: 170px;
+        padding-top: 10px;
+        margin: auto;
+        clear: both;
+    }
+
+    @include mq($from: tablet) {
+        width: 180px;
+        float: left;
+    }
+
+    .interactive-share:hover {
+        background-color: #bdbdbd;
+        border: 0;
+        cursor: pointer;
+    }
+
+    .interactive-share[data-network='facebook'] {
+        background-image: url('https://interactive.guim.co.uk/embed/aus/2020/social/facebook.svg');
+        margin-right: 5px;
+
+        @include mq($until: tablet) {
+
+        }
+
+        @include mq($from: tablet) {
+            margin-left: 20px;
+        }
+
+    }
+
+    .interactive-share[data-network='twitter'] {
+        background-image: url('https://interactive.guim.co.uk/embed/aus/2020/social/twitter.svg');
+        margin-right: 5px;
+    }
+
+    .interactive-share[data-network='email'] {
+        background-image: url('https://interactive.guim.co.uk/embed/aus/2020/social/email.svg');
+    }
+
+}
+
+    
+}
+
+
+// this removes margins from Android / iOS view
+.interactive-atom {
+    margin:0;
+    overflow: hidden;
+}
+
+// iOS and Android specific styles
+.#{$containerName} {
+    .android &,
+    .ios & {
+        overflow:hidden;
+        margin:0;
+        padding:0;
+        &__component-button {
+            span {
+                letter-spacing: unset;
+            }
+        }
+    }
+}
+
+
+:not(.hide-support-messaging) {
+
+    .australian_moment__title {
+        background-image: url("https://interactive.guim.co.uk/embed/aus/2020/social/title.svg");
+    }
+
+    .australian_moment__wrapper_contribute {
+       display: inline-block;
+    }
+
+    .australian_moment__wrapper_thanks {
+       display: none;
+    }
+
+}
+
+.hide-support-messaging {
+
+    .australian_moment__title {
+        background-image: url("https://interactive.guim.co.uk/embed/aus/2020/social/title-support.svg");
+    }
+
+    .australian_moment__wrapper_contribute {
+       display: none;
+    }
+
+    .australian_moment__wrapper_thanks {
+       display: inline-block;
+    }
+
+}
+
+
+
