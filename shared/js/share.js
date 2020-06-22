@@ -7,6 +7,8 @@ export default function share(title, shareURL, fbImg, twImg, hashTag, FBmessage=
         var twitterMessage = `${title} ${hashTag}`;
         var shareWindow;
 
+        console.log(network)
+
         if (network === 'twitter') {
             shareWindow = twitterBaseUrl + encodeURIComponent(twitterMessage + ' ') + shareURL;
         } else if (network === 'email') {
@@ -34,7 +36,7 @@ export default function share(title, shareURL, fbImg, twImg, hashTag, FBmessage=
               })
             },
             function (response) {
-              console.log("Support the Guardian")
+              console.log("Loaded Facebook")
             });
 
           }
