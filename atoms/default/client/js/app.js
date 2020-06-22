@@ -23,7 +23,7 @@ var totalDisplay = document.getElementById('total');
 
 var total_circle = document.getElementById('total_circle');
 
-var socialista = share("Support the Guardian", "https://www.theguardian.com/au", "", "", "Thousands of supporters are ensuring our independent journalism stays open to all. Join them today and help us to hit our goal of 150,000.");
+var socialista = share("Support the Guardian", "https://support.theguardian.com/contribute?acquisitionData=%7B%22source%22%3A%22GUARDIAN_APP%22%2C%22componentType%22%3A%22ACQUISITIONS_THRASHER%22%2C%22componentId%22%3A%22Aus_moment_2020_thrasher_app%22%2C%22campaignCode%22%3A%22Aus_moment_2020_thrasher_app%22%7D&INTCMP=Aus_moment_2020_thrasher_app", "", "", "Thousands of supporters are ensuring our independent journalism stays open to all. Join them today and help us to hit our goal of 150,000.");
 
 //var fbappID = document.querySelectorAll('meta[property="fb:app_id"]')[0].content;
 
