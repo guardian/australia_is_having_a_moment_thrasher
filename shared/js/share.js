@@ -14,7 +14,7 @@ export default function share(title, shareURL, fbImg, twImg, hashTag, FBmessage 
     if (network != 'facebook') {
       window.open(shareWindow, network + 'share', 'width=640,height=320');
     } else {
-      shareWindow = facebookBaseUrl + shareURL + fbImgQry;
+
       if (FB) {
         FB.ui({
           method: 'share_open_graph',
