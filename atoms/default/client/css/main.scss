@@ -53,7 +53,8 @@ section##{$containerName} {
 
 .#{$containerName} {
     width:100%;
-    
+    max-width: 100%;
+    overflow-x: hidden;
     background-color:$backgroundColor;
 
     @include mq($until: mobile) {
@@ -88,8 +89,10 @@ section##{$containerName} {
         z-index: 99;
 
         @include mq($until: tablet) {
-            width: calc(100% - 40px);
+            width: calc(100% - 60px);
             padding-bottom: 18%;
+            margin-left: 10px;
+            margin-top: 10px;
         }   
 
         @include mq($from: tablet) {
@@ -121,7 +124,7 @@ section##{$containerName} {
     &__component-button_left {
         // mixin takes 3 variables:
         // background-color, text-color, hover-background-color
-        @include component-button($bgColor: white, $color: #000, $hoverBgColor: #F9B000);
+        @include component-button($bgColor: #2c4c86, $color: #fff, $hoverBgColor: #F9B000);
         float: left;
         margin-right: 10px;
 
@@ -143,7 +146,7 @@ section##{$containerName} {
     &__component-button_right {
         // mixin takes 3 variables:
         // background-color, text-color, hover-background-color
-        @include component-button($bgColor: none, $color: #fff, $hoverBgColor: #F9B000);
+        @include component-button($bgColor: white, $color: #2c4c86, $hoverBgColor: #F9B000);
         float: left;
         border: 1px solid white;
 
@@ -358,8 +361,10 @@ section##{$containerName} {
     }
 
     .interactive-share[data-network='facebook'] {
+        background-color: rgba(0,0,0,0);
         background-image: url('https://interactive.guim.co.uk/embed/aus/2020/social/facebook.svg');
         margin-right: 5px;
+        border: 1px solid black;
 
         @include mq($until: tablet) {
 
@@ -372,11 +377,15 @@ section##{$containerName} {
     }
 
     .interactive-share[data-network='twitter'] {
+        background-color: rgba(0,0,0,0);
+        border: 1px solid black;
         background-image: url('https://interactive.guim.co.uk/embed/aus/2020/social/twitter.svg');
         margin-right: 5px;
     }
 
     .interactive-share[data-network='email'] {
+        background-color: rgba(0,0,0,0);
+        border: 1px solid black;
         background-image: url('https://interactive.guim.co.uk/embed/aus/2020/social/email.svg');
     }
 
@@ -425,6 +434,10 @@ section##{$containerName} {
 
 }
 
+.facia-snap {
+    overflow:hidden;
+}
+
 // iOS and Android specific styles
 .#{$containerName} {
     .android &,
@@ -443,6 +456,7 @@ section##{$containerName} {
 // iOS and Android specific styles
 .#{$containerName} {
     .ios & {
+        overflow:hidden;
         .australian_moment__actions {
             display: none;
         }
