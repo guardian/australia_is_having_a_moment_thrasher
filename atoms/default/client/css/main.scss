@@ -89,7 +89,7 @@ section##{$containerName} {
         z-index: 99;
 
         @include mq($until: tablet) {
-            width: calc(100% - 60px);
+            width: calc(100% - 80px);
             padding-bottom: 18%;
             margin-left: 10px;
             margin-top: 10px;
@@ -124,7 +124,7 @@ section##{$containerName} {
     &__component-button_left {
         // mixin takes 3 variables:
         // background-color, text-color, hover-background-color
-        @include component-button($bgColor: #2c4c86, $color: #fff, $hoverBgColor: #F9B000);
+        @include component-button($bgColor: #000000, $color: #fff, $hoverBgColor: #EDEDED);
         float: left;
         margin-right: 10px;
 
@@ -134,11 +134,15 @@ section##{$containerName} {
         }
 
         @include mq($until: mobileLandscape) {
-            width: 100%;
+            width: 230px;
         }
 
         svg {
             fill: white;
+        }
+
+        :hover {
+            color: black
         }
 
 
@@ -146,7 +150,7 @@ section##{$containerName} {
     &__component-button_right {
         // mixin takes 3 variables:
         // background-color, text-color, hover-background-color
-        @include component-button($bgColor: white, $color: #2c4c86, $hoverBgColor: #F9B000);
+        @include component-button($bgColor: white, $color: #000000, $hoverBgColor: #EDEDED);
         float: left;
         border: 1px solid white;
 
@@ -156,7 +160,7 @@ section##{$containerName} {
         }
 
         @include mq($until: mobileLandscape) {
-            width: 100%;
+            width: 230px;
             margin-top: 10px;
         }
 
@@ -283,7 +287,7 @@ section##{$containerName} {
                 font-family: $f-sans-serif-text;
 
                 @include mq($until: mobileLandscape) {
-                    font-size:20px;
+                    font-size:28px;
                 }
 
                 @include mq($from: mobileLandscape) {
@@ -327,12 +331,16 @@ section##{$containerName} {
 }
 
 .share_label {
-    float: left;
+    float: right;
     line-height: 45px;
     font-family: $f-sans-serif-text;
 
-    @include mq($until: desktop) {
-        display: none
+    @include mq($until: mobileLandscape) {
+       font-size: 12px;
+    }
+
+    @include mq($from: tablet, $until: desktop) {
+        display: none;
     }
 
 }
@@ -340,17 +348,22 @@ section##{$containerName} {
 .social_isolation {
     
     cursor: pointer;
-    
+
+    @include mq($until: mobileLandscape) {
+        width: 260px;
+    }
+
+    @include mq($from: mobileLandscape, $until: tablet) {
+        width: 300px;
+    }
 
     @include mq($until: tablet) {
-        width: 170px;
         padding-top: 10px;
-        margin: auto;
         clear: both;
     }
 
     @include mq($from: tablet) {
-        width: 180px;
+        width: 320px;
         float: left;
     }
 
