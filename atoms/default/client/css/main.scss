@@ -216,8 +216,8 @@ section##{$containerName} {
 
         h4 {
             font-size: 17px;
-            line-height: 21px;
-            font-family:"GuardianTitlepiece","Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
+            line-height: 19px;
+            font-family:$f-serif-text;
         }
     }
     &__wrapper_contribute, &__wrapper_contribute {
@@ -274,7 +274,36 @@ section##{$containerName} {
             height: 100%;
         }
 
+        svg {
 
+            .venus {
+                font-family: $f-sans-serif-text;
+
+                @include mq($until: mobileLandscape) {
+                    font-size:20px;
+                }
+
+                @include mq($from: mobileLandscape) {
+                    font-size:14px;
+                }
+            }
+
+            .mars {
+                font-family:"GuardianTitlepiece","Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
+                
+
+                @include mq($until: mobileLandscape) {
+                    font-size:60px;
+                    background-color: none;
+                }
+
+                @include mq($from: mobileLandscape) {
+                    font-size:50px;
+                }
+
+            }
+
+        }
     }
     &__wrapper {
         display: inline-block;
