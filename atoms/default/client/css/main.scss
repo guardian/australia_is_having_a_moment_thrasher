@@ -99,6 +99,17 @@ section##{$containerName} {
         }
 
     }
+    &__camera {
+        width: 20px;
+        width: 20px;
+        margin-right: 5px;
+        margin-left: 10px;
+        float: left;
+        background-image: url('https://interactive.guim.co.uk/embed/aus/2020/social/camera.svg');
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
     &__headline {
         color:$textColor;
         font-family:"GuardianTitlepiece","Guardian Headline Full","Guardian Egyptian Web",Georgia,serif;
@@ -123,6 +134,11 @@ section##{$containerName} {
             width: 100%;
         }
 
+        svg {
+            fill: white;
+        }
+
+
     }
     &__component-button_right {
         // mixin takes 3 variables:
@@ -139,6 +155,10 @@ section##{$containerName} {
         @include mq($until: mobileLandscape) {
             width: 100%;
             margin-top: 10px;
+        }
+
+        svg {
+            fill: white;
         }
 
 
@@ -343,21 +363,6 @@ section##{$containerName} {
     overflow: hidden;
 }
 
-// iOS and Android specific styles
-.#{$containerName} {
-    .android &,
-    .ios & {
-        overflow:hidden;
-        margin:0;
-        padding:0;
-        &__component-button {
-            span {
-                letter-spacing: unset;
-            }
-        }
-    }
-}
-
 
 :not(.hide-support-messaging) {
 
@@ -391,5 +396,27 @@ section##{$containerName} {
 
 }
 
+// iOS and Android specific styles
+.#{$containerName} {
+    .android &,
+    .ios & {
+        overflow:hidden;
+        margin:0;
+        padding:0;
+        &__component-button {
+            span {
+                letter-spacing: unset;
+            }
+        }
+    }
+}
 
+// iOS and Android specific styles
+.#{$containerName} {
+    .ios & {
+        .australian_moment__actions {
+            display: none;
+        }
+    }
+}
 
