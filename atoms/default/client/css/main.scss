@@ -460,7 +460,7 @@ section##{$containerName} {
         padding:0;
         &__component-button {
             span {
-                letter-spacing: unset;
+
             }
         }
     }
@@ -470,8 +470,24 @@ section##{$containerName} {
 .#{$containerName} {
     .ios & {
         overflow:hidden;
-        .australian_moment__actions {
+        &__component-button_left {
             display: none;
+        }
+
+        &__component-button {
+            margin-top: 0px;
+            span {
+                font-weight: 700;
+                font-family: Guardian Text Sans Web,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+            }
+        }
+
+        p {
+            font-family: Guardian Text Sans Web,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+        }
+
+        h4 {
+            font-family: "Guardian Headline Full",Georgia,serif;
         }
     }
 }
