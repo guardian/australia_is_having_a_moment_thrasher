@@ -108,7 +108,7 @@ section##{$containerName} {
         margin-right: 5px;
         margin-left: 10px;
         float: left;
-        background-image: url('https://interactive.guim.co.uk/embed/aus/2020/social/camera.svg');
+        background-image: url('https://interactive.guim.co.uk/embed/aus/2020/social/Video.svg');
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: center center;
@@ -300,7 +300,7 @@ section##{$containerName} {
                 
 
                 @include mq($until: mobileLandscape) {
-                    font-size:60px;
+                    font-size:55px;
                     background-color: none;
                 }
 
@@ -314,6 +314,9 @@ section##{$containerName} {
     }
     &__wrapper {
         display: inline-block;
+    }
+    &__ios {
+        display: none;
     }
 
 .interactive-share {
@@ -470,16 +473,32 @@ section##{$containerName} {
 .#{$containerName} {
     .ios & {
         overflow:hidden;
-        &__component-button_left {
+        &__actions {
             display: none;
         }
 
-        &__component-button {
+        &__ios {
+            width: 190px;
+            height: 36px;
+            background-repeat: no-repeat;
+            margin-left: 20px;
             margin-top: 0px;
-            span {
-                font-weight: 700;
-                font-family: Guardian Text Sans Web,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+            margin-bottom: 20px;
+            background-image: url('https://interactive.guim.co.uk/embed/aus/2020/social/ios.svg');
+            
+            @include mq($until: mobileLandscape) {
+                display: block;
+                :hover {
+                    opacity: 0.6;
+                }
+
             }
+
+            @include mq($from: mobileLandscape) {
+                display: none;
+            }
+
+
         }
 
         p {
