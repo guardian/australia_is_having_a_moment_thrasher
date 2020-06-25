@@ -3,7 +3,7 @@ const twitterBaseUrl = 'https://twitter.com/intent/tweet?text=';
 export default function share(title, shareURL, fbImg, twImg, hashTag, FBmessage = '') {
   var twImgText = twImg ? ` ${twImg.trim()} ` : ' ';
   return function(network, extra = '') {
-    var twitterMessage = `${extra}${title}${twImgText}${hashTag}`;
+    var twitterMessage = `${extra}${title} ${hashTag}`;
     var shareWindow;
     if (network === 'twitter') {
       shareWindow = twitterBaseUrl + encodeURIComponent(twitterMessage + ' ') + shareURL;

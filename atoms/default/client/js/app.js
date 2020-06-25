@@ -23,7 +23,7 @@ var totalDisplay = document.getElementById('total');
 
 var total_circle = document.getElementById('total_circle');
 
-var socialista = share("Information can save lives. Help Guardian Australia reach 150,000 supporters", "https://support.theguardian.com/contribute", "https://interactive.guim.co.uk/embed/aus/2020/social/guardian_australia.png", "https://interactive.guim.co.uk/embed/aus/2020/social/guardian_australia.png", "#supporttheguardian", "Guardian Australia supporters are doing something powerful. I support the Guardian because I believe their independent journalism is vital, and should be open and free to all. Join me. With your support, we can do more.");
+var socialista = share("Information can save lives. Help Guardian Australia reach 150,000 supporters ", "https://support.theguardian.com/contribute", "https://interactive.guim.co.uk/embed/aus/2020/social/guardian_australia.png", "https://interactive.guim.co.uk/embed/aus/2020/social/guardian_australia.png", "#supporttheguardian", "Guardian Australia supporters are doing something powerful. I support the Guardian because I believe their independent journalism is vital, and should be open and free to all. Join me. With your support, we can do more.");
 
 const platforms = document.querySelectorAll('.interactive-share');
 
